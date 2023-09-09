@@ -1,14 +1,12 @@
 // Global Variables
 const getTaskInput = document.getElementById("taskInput").value;
 const pushBtn = document.getElementById("push");
+const taskLists = document.getElementById("tasks");
 
 pushBtn.addEventListener('click', () => {
-    if(getTaskInput == 0) {
+    if(getTaskInput.length == 0) {
         alert('Please Input Something');
-        console.log('I dey work');
     } else {
-
+        taskLists.innerHTML = `<p>${getTaskInput}</p>`;
     }
 })
-
-// alert('hello word');
