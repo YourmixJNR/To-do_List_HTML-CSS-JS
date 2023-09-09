@@ -44,13 +44,33 @@ main {
 #newtask input {
     width: 75%;
     height: 45px;
-    font-family: 'Poppins', sans-serif;
+    padding: 12px;
     font-size: 15px;
+    font-weight: 500;
     border: none;
     outline: none;
-    padding: 12px;
     color: #111111;
-    font-weight: 500;
-    position: relative;
     border-radius: 5px;
-  }
+}
+
+#newtask button {
+    float: right;
+    width: 20%;
+    height: 45px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #00D8FF;
+    border: none;
+    border-radius: 5px;
+    color: #1d1515;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+}
+
+#tasks {
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
