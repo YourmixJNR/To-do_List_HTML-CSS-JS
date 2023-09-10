@@ -13,7 +13,7 @@ pushBtn.addEventListener('click', (e) => {
     } else {
         taskLists.innerHTML += `
         <div class="task">
-            <span id="taskname">
+            <span id="taskname" class="taskname">
                 ${inputValue}
             </span>
             <button class="delete">
@@ -22,15 +22,20 @@ pushBtn.addEventListener('click', (e) => {
         </div>`
         ;
 
-        const deleteTask = document.querySelectorAll('.delete');
-
-        for(let i = 0; i < deleteTask.length; i++) {
-            deleteTask[i].addEventListener('click', (e) => {
-                e.target.parentNode.remove();
-            });
-        };
+        // Use event delegation to handle both completion and deletion
+        taskLists.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target.classList.contains('task')) {
+                // Toggle the 'completed' class on the task
+                target.classList.toggle('completed');
+            } else if (target.classList.contains('delete')) {
+                // Remove the parent task element when the delete button is clicked
+                target.parentNode.remove();
+            }
+        });
+        
     };
 
     getTaskInput.value = '';
-    
+
 })
