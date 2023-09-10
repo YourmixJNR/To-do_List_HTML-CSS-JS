@@ -11,14 +11,18 @@ pushBtn.addEventListener('click', (e) => {
     if(inputValue.length == 0) {
         alert('Comrade Please Input Something');
     } else {
-        taskLists.innerHTML += `<div class="task">
-        <span id="taskname">
-            ${inputValue}
-        </span>
-        <button class="delete">
-            <i class="far fa-trash-alt"></i>
-        </button>
-    </div>`;
+        taskLists.innerHTML += `
+        <div class="task">
+            <span id="taskname">
+                ${inputValue}
+            </span>
+            <button class="delete">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>`
+        ;
+
+        
     }
 
     getTaskInput.value = '';
