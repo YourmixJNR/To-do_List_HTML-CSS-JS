@@ -79,6 +79,43 @@ main {
     position: relative;
 }
 
+.task {
+    background-color: #90d4ff;
+    height: 50px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #939697;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .task span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  .task button {
+    background-color: #1c182b;
+    color: #FE4CFF;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    outline: none;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+  }
+
 @media (max-width: 600px) {
     
     .maincontainer {
