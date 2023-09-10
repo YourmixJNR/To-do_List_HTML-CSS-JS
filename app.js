@@ -22,8 +22,14 @@ pushBtn.addEventListener('click', (e) => {
         </div>`
         ;
 
-        
-    }
+        const deleteTask = document.querySelectorAll('.delete');
+
+        for(let i = 0; i < deleteTask.length; i++) {
+            deleteTask[i].addEventListener('click', (e) => {
+                e.target.parentNode.remove();
+            });
+        };
+    };
 
     getTaskInput.value = '';
 })
