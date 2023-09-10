@@ -8,7 +8,7 @@ To get started with the project, you don't need to install any dependencies or s
 
 1. Clone the repository to your local machine:
 
-git clone https://github.com/YourmixJNR/To-do_List_HTML-CSS-JS.git
+   git clone https://github.com/YourmixJNR/To-do_List_HTML-CSS-JS.git
 
 2. Open the `index.html` file in your web browser.
 
