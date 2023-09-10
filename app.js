@@ -5,7 +5,7 @@ const taskLists = document.getElementById("tasks");
 
 pushBtn.addEventListener('click', () => {
     if(getTaskInput.length == 0) {
-        alert('Please Input Something');
+        alert('Comrade Please Input Something');
     } else {
         taskLists.innerHTML = `<p>${getTaskInput}</p>`;
     }
