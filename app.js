@@ -32,4 +32,5 @@ pushBtn.addEventListener('click', (e) => {
     };
 
     getTaskInput.value = '';
+    
 })
