@@ -22,6 +22,14 @@ pushBtn.addEventListener('click', (e) => {
         </div>`
         ;
 
+        // Init localStorage to store todo
+
+        const storeTodo = {
+            inputTask : inputValue
+        }
+
+        localStorage.setItem('todos', JSON.stringify(storeTodo));
+
         // Use event delegation to handle both completion and deletion
         taskLists.addEventListener('click', (e) => {
             const target = e.target;
