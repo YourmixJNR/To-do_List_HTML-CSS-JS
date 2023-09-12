@@ -11,6 +11,15 @@ pushBtn.addEventListener('click', (e) => {
     if(inputValue.length == 0) {
         alert('Comrade Please Input Something');
     } else {
+
+        // Init localStorage to store todo
+
+        const storeTodo = {
+            inputTask : inputValue
+        }
+
+        localStorage.setItem('todos', JSON.stringify(storeTodo));
+        
         taskLists.innerHTML += `
         <div class="task">
             <span id="taskname" class="taskname">
@@ -21,14 +30,6 @@ pushBtn.addEventListener('click', (e) => {
             </button>
         </div>`
         ;
-
-        // Init localStorage to store todo
-
-        const storeTodo = {
-            inputTask : inputValue
-        }
-
-        localStorage.setItem('todos', JSON.stringify(storeTodo));
 
         // Use event delegation to handle both completion and deletion
         taskLists.addEventListener('click', (e) => {
