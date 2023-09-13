@@ -14,7 +14,7 @@ pushBtn.addEventListener('click', (e) => {
 
         // Init localStorage to store todo
 
-        const mainTodos = [];
+        const mainTodos = JSON.parse(localStorage.getItem('todos')) || [];
 
         const storeTodo = {
             inputTask : inputValue
