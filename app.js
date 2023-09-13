@@ -14,11 +14,15 @@ pushBtn.addEventListener('click', (e) => {
 
         // Init localStorage to store todo
 
+        const mainTodos = [];
+
         const storeTodo = {
             inputTask : inputValue
-        }
+        };
 
-        localStorage.setItem('todos', JSON.stringify(storeTodo));
+        mainTodos.push(storeTodo);
+
+        localStorage.setItem('todos', JSON.stringify(mainTodos));
         
         taskLists.innerHTML += `
         <div class="task">
