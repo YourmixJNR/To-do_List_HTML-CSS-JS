@@ -1,59 +1,38 @@
-// Global Variables
 const getTaskInput = document.getElementById("taskInput");
 const pushBtn = document.getElementById("push");
 const taskLists = document.getElementById("tasks");
 
-pushBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+// Load existing tasks from local storage, or initialize as an empty array
+let tasks = JSON.parse(localStorage.getItem('todos')) || [];
 
-    const inputValue = getTaskInput.value;
+// Function to render tasks
+function renderTasks() {
+    taskLists.innerHTML = '';
+    tasks.forEach((task, index) => {
+        const taskElement = document.createElement('div');
+        taskElement.classList.add('task');
+        taskElement.innerHTML = `
+            <span class="taskname">${task}</span>
+            <button class="delete"><i class="far fa-trash-alt"></i></button>
+        `;
+        taskLists.appendChild(taskElement);
 
-    if(inputValue.length == 0) {
-        alert('Comrade Please Input Something');
-    } else {
-
-        // Init localStorage to store todo
-
-        const mainTodos = JSON.parse(localStorage.getItem('todos')) || [];
-
-        const storeTodo = {
-            inputTask : inputValue
-        };
-
-        mainTodos.push(storeTodo);
-
-        localStorage.setItem('todos', JSON.stringify(mainTodos));
-
-        // Function to render tasks
-        function renderTasks() {
-            
-        }
-        
-        taskLists.innerHTML += `
-        <div class="task">
-            <span id="taskname" class="taskname">
-                ${inputValue}
-            </span>
-            <button class="delete">
-                <i class="far fa-trash-alt"></i>
-            </button>
-        </div>`
-        ;
-
-        // Use event delegation to handle both completion and deletion
-        taskLists.addEventListener('click', (e) => {
-            const target = e.target;
-            if (target.classList.contains('task')) {
-                // Toggle the 'completed' class on the task
-                target.classList.toggle('completed');
-            } else if (target.classList.contains('delete')) {
-                // Remove the parent task element when the delete button is clicked
-                target.parentNode.remove();
+        // Add event listener for marking as completed and deleting
+        taskElement.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete')) {
+                // Delete task
+                tasks.splice(index, 1);
+                localStorage.setItem('todos', JSON.stringify(tasks));
+                renderTasks(); // Re-render tasks after deletion
+            } else {
+                // Mark as completed (toggle class, update local storage)
+                taskElement.querySelector('.taskname').classList.toggle('completed');
+                tasks[index] = taskElement.querySelector('.taskname').textContent;
+                localStorage.setItem('todos', JSON.stringify(tasks));
             }
         });
-        
-    };
+    });
+}
 
-    getTaskInput.value = '';
-
-})
+// Initial rendering of tasks
+renderTasks();
