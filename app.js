@@ -23,6 +23,11 @@ pushBtn.addEventListener('click', (e) => {
         mainTodos.push(storeTodo);
 
         localStorage.setItem('todos', JSON.stringify(mainTodos));
+
+        // Function to render tasks
+        function renderTasks() {
+            
+        }
         
         taskLists.innerHTML += `
         <div class="task">
