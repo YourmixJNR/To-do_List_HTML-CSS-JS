@@ -2,24 +2,6 @@ const getTaskInput = document.getElementById("taskInput");
 const pushBtn = document.getElementById("push");
 const taskLists = document.getElementById("tasks");
 
-// Event listener for adding a new task
-pushBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const inputValue = getTaskInput.value;
-
-    if (inputValue.length == 0) {
-        alert('Comrade Please Input Something');
-    } else {
-        // Add the new task to the list
-        tasks.push(inputValue);
-        localStorage.setItem('todos', JSON.stringify(tasks));
-        renderTasks(); // Re-render tasks after adding
-    }
-
-    getTaskInput.value = '';
-});
-
-
 // Load existing tasks from local storage, or initialize as an empty array
 let tasks = JSON.parse(localStorage.getItem('todos')) || [];
 
@@ -54,3 +36,20 @@ function renderTasks() {
 
 // Initial rendering of tasks
 renderTasks();
+
+// Event listener for adding a new task
+pushBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const inputValue = getTaskInput.value;
+
+    if (inputValue.length == 0) {
+        alert('Comrade Please Input Something');
+    } else {
+        // Add the new task to the list
+        tasks.push(inputValue);
+        localStorage.setItem('todos', JSON.stringify(tasks));
+        renderTasks(); // Re-render tasks after adding
+    }
+
+    getTaskInput.value = '';
+});
