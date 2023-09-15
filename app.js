@@ -13,7 +13,9 @@ function renderTasks() {
         taskElement.classList.add('task');
         taskElement.innerHTML = `
             <span class="taskname">${task}</span>
-            <button class="delete"><i class="far fa-trash-alt"></i></button>
+            <button class="delete">
+                <i class="far fa-trash-alt"></i>
+            </button>
         `;
         taskLists.appendChild(taskElement);
 
