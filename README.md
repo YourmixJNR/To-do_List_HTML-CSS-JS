@@ -22,10 +22,6 @@ To get started with the project, you don't need to install any dependencies or s
 
 - **Delete Tasks:** If you want to remove a task, click the "Delete" button next to it.
 
-## Note
-
-Please be aware that this is a simple todo list application without any database or local storage integration. This means that once you reload or close your browser, your todo list will be reset, and your tasks will be gone.
-
 ## What I Learned
 
 In the process of building this project, I learned about event delegation. Event delegation is a technique that allows for efficient event handling, especially when dealing with a large number of elements. It helped me improve the performance and maintainability of my code by attaching a single event listener to a common ancestor element and handling events based on the target element.
