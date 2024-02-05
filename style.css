@@ -91,6 +91,10 @@ main {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.check{
+    cursor: pointer;
+}
   
 .task span {
     font-size: 15px;
